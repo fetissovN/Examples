@@ -9,16 +9,12 @@ public class InterferenceThread extends Thread {
 
     /**
      * make volatile
-     * 4) make StateObject class
+     * 4) look in concurrency1 pack
      */
-//    private static volatile int  i;
-
-    StateObject stateObject = new StateObject();
-
-    private static Object object = new Object();
+    private static volatile int  i;
 
     public InterferenceThread(InterferenceExample checker) {
-        this.checker = checker;
+        this.checker= checker;
     }
 
     public void run(){
@@ -33,13 +29,12 @@ public class InterferenceThread extends Thread {
      * 3) synchronize inside with static checker
      */
     private void increment() {
-//        synchronized (object){
-            stateObject.increment();
-//            i++;
-//        }
+        synchronized (checker){
+            i++;
+        }
     }
 
     public int getI(){
-        return stateObject.getI();
+        return i;
     }
 }
