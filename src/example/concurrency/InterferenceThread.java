@@ -37,4 +37,5 @@ public class InterferenceThread extends Thread {
     public int getI(){
         return i;
     }
+
 }
