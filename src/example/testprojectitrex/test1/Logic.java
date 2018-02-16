@@ -1,4 +1,4 @@
-package example.TestProjectITRex.test1;
+    package example.testprojectitrex.test1;
 
 
 import java.util.ArrayList;
