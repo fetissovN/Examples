@@ -20,8 +20,6 @@ public class Logic {
 
     private int counterTime = 0;
 
-    private int[] princeLocationWhileFalling = new int[2];
-
     private boolean finished = false;
 
     public Logic(Map<Integer, String[][]> map, List<String> options) {
@@ -49,9 +47,11 @@ public class Logic {
                         }
                         if (!movedH && !movedV){
                             blockIsCurrentlyAnalysing++;
+                            if (blockIsCurrentlyAnalysing > levels){
+                                throw new IllegalArgumentException("There is no 2!");
+                            }
                             putPrinceOnLowerLevel(i,j);
                         }
-
                     }
                 }
 
@@ -62,6 +62,9 @@ public class Logic {
 
     private void putPrinceOnLowerLevel(int i, int j) {
         String[][] block = map.get(blockIsCurrentlyAnalysing);
+        if (block[i][j].equals("O")){
+            throw new IllegalArgumentException("Lower block is wrong, u can't fall on a pillar!");
+        }
         if (block[i][j].equals("2")){
             finished = true;
         }else {
@@ -120,8 +123,8 @@ public class Logic {
                 movedLeft = false;
             }
             if (leftBlock.equals("2")){
-                finished = true;
                 counterTime++;
+                finished = true;
             }
             if (leftBlock.equals(".")){
                 block[i][j-1] = "1";
@@ -136,8 +139,8 @@ public class Logic {
                 movedRight = false;
             }
             if (rightBlock.equals("2")){
-                finished = true;
                 counterTime++;
+                finished = true;
             }
             if (rightBlock.equals(".")){
                 block[i][j+1] = "1";
@@ -153,6 +156,4 @@ public class Logic {
         map.put(blockIsCurrentlyAnalysing,block);
         counterTime++;
     }
-
-
 }

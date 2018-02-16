@@ -27,7 +27,7 @@ class Reader implements IReader{
     }
 
     @Override
-    public Map<Integer,String[][]> readBlocks(List<String> options) throws IOException {
+    public Map<Integer,String[][]> readBlocks(List<String> options) throws IOException, IndexOutOfBoundsException {
         String levelsStr = options.get(0);
         String rowStr = options.get(1);
         String colStr = options.get(2);
@@ -58,6 +58,10 @@ class Reader implements IReader{
             }
         }
         return map;
+    }
+
+    public void close() throws IOException {
+        br.close();
     }
 
 }

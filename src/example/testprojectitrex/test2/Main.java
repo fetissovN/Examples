@@ -12,11 +12,18 @@ public class Main {
             Reader reader = new Reader();
             List<String> options = reader.readOptions();
             Map<Integer, String[][]> map = reader.readBlocks(options);
+            reader.close();
+
             Logic logic = new Logic(map,options);
             int steps = logic.play();
             System.out.println(steps*5+" seconds");
 
 
+        } catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
+            System.out.println("Check your labyrinth!");
+        } catch (IndexOutOfBoundsException e){
+            System.out.println("Wrong options");
         } catch (IOException e) {
             System.out.println("Check your file name and location");
         }
