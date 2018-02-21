@@ -15,11 +15,8 @@ public class View {
             br = new BufferedReader(new InputStreamReader(System.in));
 
             while (true) {
-
                 System.out.print("Enter something : ");
                 String input = br.readLine();
-
-
 
                 if ("q".equals(input)) {
                     System.out.println("Exit!");

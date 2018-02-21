@@ -3,16 +3,17 @@
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Logic {
 
-    private String text;
-    private String C = "c";
+    private static String text;
+    private static final String C = "c";
 
-    private String A = "a";
-    private String AN = "an";
-    private String THE = "the";
+    private static final String A = "a";
+    private static final String AN = "an";
+    private static final  String THE = "the";
 
     public Logic(String input) {
         this.text = input;
@@ -65,15 +66,17 @@ public class Logic {
     }
 
     private StringBuilder checkDouble(String[] withoutC){
+        boolean wordIsChecking;
         StringBuilder totalString = new StringBuilder();
         for (int i = 0; i < withoutC.length; i++) {
+            wordIsChecking = true;
             StringBuilder sBuilder = new StringBuilder(withoutC[i]);
-            while (true){
+            while (wordIsChecking){
                 String checkWord = sBuilder.toString();
                 for (int j = 0; j < sBuilder.length(); j++) {
-                    sBuilder.charAt(i);
                     if (j == sBuilder.length()-1){
                         totalString.append(sBuilder+" ");
+                        wordIsChecking = false;
                         break;
                     }
                     if (String.valueOf(sBuilder.charAt(j))
@@ -121,10 +124,11 @@ public class Logic {
                 integers.add(i);
             }
         }
-
         String[] finalArray = textWithNoE.toString().split(" ");
-        List<String> stringList = Arrays.asList(finalArray);
-        integers.forEach(stringList::remove);
+        List<String> stringList = new LinkedList<>(Arrays.asList(finalArray));
+        for (Integer i: integers) {
+            stringList.remove((int)i);
+        }
         StringBuilder stringBuilder = new StringBuilder();
         for (String s: stringList) {
             stringBuilder.append(s+" ");
