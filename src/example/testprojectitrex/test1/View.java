@@ -8,11 +8,8 @@ import java.io.InputStreamReader;
 public class View {
 
     public void start(){
-        BufferedReader br = null;
 
-        try{
-
-            br = new BufferedReader(new InputStreamReader(System.in));
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
 
             while (true) {
                 System.out.print("Enter something : ");
@@ -34,14 +31,6 @@ public class View {
 
         }catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            if (br != null) {
-                try {
-                    br.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
         }
     }
 }
