@@ -2,25 +2,32 @@ package example.other;
 
 
 import java.util.*;
+import java.util.concurrent.FutureTask;
 
 public class Main {
     public static void main(String[] args) {
-        Car car1 = new Car();
-        car1.setPrice(1);
-        car1.setSpeed(1);
-        Car car2 = new Car();
-        car2.setPrice(1);
-        car2.setSpeed(2);
+//        Car car1 = new Car();
+//        car1.setPrice(1);
+//        car1.setSpeed(1);
+//        Car car2 = new Car();
+//        car2.setPrice(1);
+//        car2.setSpeed(2);
+//        HashSet<Car> hashSet = new HashSet();
+//        hashSet.add(car1);
+//        hashSet.add(car2);
+//        System.out.println(car1.hashCode());
+//        System.out.println(car2.hashCode());
+//        for (Car car: hashSet) {
+//            System.out.println(car);
+//        }
+//        System.out.println(hashSet.size());
 
-        HashSet<Car> hashSet = new HashSet();
-        hashSet.add(car1);
-        hashSet.add(car2);
-        System.out.println(car1.hashCode());
-        System.out.println(car2.hashCode());
-        for (Car car: hashSet) {
-            System.out.println(car);
-        }
-        System.out.println(hashSet.size());
+//        Arrays.sort();
+//        int i = 0;
+//        for (int j = 0; j < 100; j++) {
+//            i= ++i;
+//        }
+//        System.out.println(i);
     }
 
     public static void mmm(){

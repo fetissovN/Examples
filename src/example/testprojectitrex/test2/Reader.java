@@ -6,7 +6,7 @@ import java.util.*;
 
 class Reader implements IReader{
 
-    private final String file = "input.txt";
+    private static final String file = "input.txt";
     private LineNumberReader br;
 
 
