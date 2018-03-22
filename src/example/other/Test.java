@@ -20,7 +20,7 @@ public class Test {
         Collections.sort(a);
         Collections.sort(b);
 
-//        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList = new ArrayList();
 //        arrayList.add(2);
 //        arrayList.add(7);
 //        arrayList.add(9);
