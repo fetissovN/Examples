@@ -11,7 +11,7 @@ public class InterferenceThread extends Thread {
      * make volatile
      * 4) look in concurrency1 pack
      */
-    private static volatile int  i;
+    private static int  i;
 
     public InterferenceThread(InterferenceExample checker) {
         this.checker= checker;
