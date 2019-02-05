@@ -6,6 +6,8 @@ public class InterferenceExample {
 
     public static final int Million = 1_000_000;
 
+    // works because StateObject created here globally for 2 threads
+    // this is done instead of synchronizing on STATIC content (staticS are globally visible)
     private StateObject object = new StateObject();
 
     private AtomicInteger counter = new AtomicInteger();

@@ -8,6 +8,13 @@ public class InterferenceThread extends Thread {
     private final InterferenceExample checker;
 
     /**
+     * Should be static to work
+     * otherwise new Object will be created for each thread
+     * and can't be synchronized on not global object
+     */
+//    private static Object o = new Object();
+
+    /**
      * make volatile
      * 4) look in concurrency1 pack
      */
@@ -29,9 +36,9 @@ public class InterferenceThread extends Thread {
      * 3) synchronize inside with static checker
      */
     private void increment() {
-        synchronized (checker){
+//        synchronized (o){
             i++;
-        }
+//        }
     }
 
     public int getI(){
