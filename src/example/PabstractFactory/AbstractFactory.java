@@ -23,7 +23,6 @@ interface Car {
 }
 
 class Toyota implements Car{
-
     @Override
     public void drive() {
         System.out.println("drive Toyota");
@@ -31,7 +30,6 @@ class Toyota implements Car{
 }
 
 class Audi implements Car{
-
     @Override
     public void drive() {
         System.out.println("drive Audi");
