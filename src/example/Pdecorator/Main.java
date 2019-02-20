@@ -40,4 +40,18 @@ class BufferedStreamReader extends Decorator {
     }
 }
 
+//class BufferedStreamReader implements FileStream{
+//    FileStream fileStream = null;
+//
+//    public BufferedStreamReader(FileStream fileStream) {
+//        this.fileStream = fileStream;
+//    }
+//
+//    @Override
+//    public void read() {
+//        fileStream.read();
+//        System.out.println("skldbf;sjbdn");
+//    }
+//}
+
 
